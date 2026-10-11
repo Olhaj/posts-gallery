@@ -13,19 +13,23 @@
   display: flex;
   justify-content: space-between;
 }
+
 .gallery_container .content {
   width: 400px;
 }
+
 .gallery_container .content img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .gallery_container .trigger_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .gallery_container .trigger_container img {
   width: 70px;
   height: 70px;
@@ -33,19 +37,61 @@
   transition: box-shadow 0.5s;
   border-radius: 5px;
 }
+
 .gallery_container .trigger_container img:active {
   transform: scale(0.9);
 }
+
 .gallery_container .trigger_container img:hover {
   box-shadow: 2px 2px 5px;
 }
 
+.posts_container {
+  margin: 40px auto;
+  width: 600px;
+  height: 300px;
+}
+
+.trigger_container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
 .post_item {
-  border: 1px solid #ccc;
+  height: 250px;
+  border: 2px solid black;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+  overflow-y: auto; /* лишний текст прокручивается */
+  overflow-x: hidden; /* горизонтальный выход скрыт */
 }
-.post_item h3 {
+
+.posts_container button {
+  padding: 5px 5px;
+  background: #fff;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.posts_container button:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.posts_container button.active {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.posts_container button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.post_item p {
   margin-bottom: 5px;
 }
